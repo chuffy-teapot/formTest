@@ -40,7 +40,7 @@ function foo() {
     div.append(span);
     li.append(div);
     li.append(del);
-    list.append(li);
+    list.prepend(li);
 
     INP.value = "";
   }
