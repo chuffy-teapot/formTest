@@ -4,51 +4,36 @@ let BTN = document.querySelector(".btn");
 let form = document.querySelector(".form")
 
 
-console.log(list.childNodes);
-
-
 function foo() {
-  let li;
-  let div;
-  let span;
-  let check;
-  let del;
-  let rem;
+  if (!INP.value) return;
+
+  let li = document.createElement("li");
+  let div = document.createElement("div");
+  let span = document.createElement("span");
+  let check = document.createElement("input");
+  let del = document.createElement("button");
+
+  check.setAttribute("type", "checkbox")
+  del.setAttribute("onclick", "rem()")
 
 
-  if (list.childNodes.length <= 15 && INP.value !== "") {
-    li = document.createElement("li");
-    div = document.createElement("div");
-    span = document.createElement("span");
-    check = document.createElement("input")
-    check.setAttribute("type", "checkbox")
-    del = document.createElement("button")
-    del.setAttribute("class", "delete__btn")
-  }
+  span.textContent = INP.value;
 
-  try {
-    span.textContent = INP.value;
-
-    li.className = "list__item";
-    div.className = "list__box";
-    span.className = "list__item-span";
-    check.className = "checkbox";
+  li.className = "list__item";
+  div.className = "list__box";
+  del.className = "delete__btn"
+  span.className = "list__item-span";
+  check.className = "checkbox";
 
 
-    del.append("delete")
-    div.append(check);
-    div.append(span);
-    li.append(div);
-    li.append(del);
-    list.append(li);
+  del.append("delete")
+  div.append(check);
+  div.append(span);
+  li.append(div);
+  li.append(del);
+  list.prepend(li);
 
-    INP.value = "";
-  }
-  catch (error) {
-    BTN.setAttribute("onclick", " ")
-    INP.placeholder = "too many items"
-    console.log(error.message)
-  }
+  INP.value = "";
 
   if (list.childNodes.length !== 1) {
     form.style.borderBottomLeftRadius = "0px";
@@ -58,7 +43,10 @@ function foo() {
     form.style.borderBottomRightRadius = "10px";
   }
 
-  rem = document.querySelector(".delete__btn").addEventListener("click" , () => {
-    list.lastElementChild.hidden = "true"
-  })
+}
+
+const rem = () => {
+  let btn = document.querySelectorAll(".delete__btn");
+
+  console.log(btn.parentNode);
 }
