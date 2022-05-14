@@ -18,14 +18,14 @@ body{
   border-radius: 10px;
   display: flex;
   justify-content: center;
+  user-select: none;
 }
 
 .list{
   margin: 0;
   padding: 0;
-  width: 61%;
+  width: 61.5%;
   height: fit-content;
-  background-color: #01a1a157;
   border-bottom-right-radius: 10px;
   border-bottom-left-radius: 10px;
   list-style: none;
@@ -36,24 +36,24 @@ body{
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: #ffffff9c;
+  background-color: #01a1a157;
+  border-bottom: 1px solid #01a1a157;
+  user-select: none;
 }
 
 .list__item:last-child{
   border-bottom-right-radius: 10px;
   border-bottom-left-radius: 10px;
+  border-bottom: none;
+}
+
+.list__item:first-child{
+  border-top: 1px solid #01a1a157;
 }
 
 .list__box{
   display: flex;
   align-items: center;
-}
-
-.list__item-red{
-  padding: 10px;
-  background-color: #ff000080;
-  border-bottom-right-radius: 10px;
-  border-bottom-left-radius: 10px;
 }
 
 .input{
@@ -65,11 +65,11 @@ body{
   border-bottom-right-radius: 0px;
   border: none;
   outline: none;
+  user-select: none;
 }
 
 .btn{
-  width: 10%;
-  padding: 10px 15px;
+  padding: 10px 15px; 
   border-radius: 10px;
   border-top-left-radius: 0px;
   border-bottom-left-radius: 0px;
@@ -94,7 +94,6 @@ body{
   user-select: none;
 }
 
-
 .delete__btn{
   padding: 5px 10px;
   border: none;
@@ -102,5 +101,26 @@ body{
   color: white;
   outline: none;
   background-color: #ff7171;
+  cursor: pointer;
+}
+
+.edit__btn{
+  margin: 0px 10px;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  outline: none;
+  background-color: #ff9900b9;
+  cursor: pointer;
+}
+
+.check__btn{
+  padding: 5px 10px;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  outline: none;
+  background-color: #008000b4;
   cursor: pointer;
 }
