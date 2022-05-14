@@ -45,11 +45,20 @@ function foo() {
   li.append(div);
   list.prepend(li);
 
+  setTimeout(() => {
+    li.style.marginTop = "0";
+  }, 100);
+
   INP.value = "";
 
   del.addEventListener("click", () => {
-    let con = confirm("вы уверены ?");
-    if (con) li.remove();
+    let con = confirm("вы уверены ?")
+    if (con) {
+      li.style.opacity = "0";
+      setTimeout(() => {
+        li.remove()
+      }, 300);
+    }
   })
 
   edit.addEventListener("click", () => {
